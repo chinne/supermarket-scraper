@@ -1,0 +1,40 @@
+# Supermarket Scraper
+
+This tool provides the possibility to scrape data specifically product offers from supermarket websites. The websites are checked if scraping is allowed (e.g. robots.txt, legals).
+So far the following supermarkets are implemented:
+
+* [*] https://goasia.net/onlineshop/angebot/[GoAsia]
+* [ ] https://www.aldi-nord.de/angebote.html[Aldi] (has to be fixed)
+* [ ] Kaufland
+* [ ] ...
+
+After installing scrapy the following command can be used to scrape data from provided supermarkets:
+
+[source,bash]
+----
+scrapy crawl <supermarket> -O <filename>.csv
+----
+
+Here is example command for GoAsia:
+
+[source,bash]
+----
+scrapy crawl goasia -O goasia.csv
+----
+
+The scraped result from GoAsia can look like this:
+
+[cols=4*]
+,===
+name,price,available,link
+味之素韩式烧烤杯面|AJINOMOTO OYAKATA Ramen Koreanische BBQ Cup 93g,"1,59",yes,https://goasia.net/detail/index/sArticle/6452/sCategory/20
+味之素泰式炒面杯面|AJINOMOTO OYAKATA Ramen Pad Thai Cup 93g,"1,59",yes,https://goasia.net/detail/index/sArticle/6453/sCategory/20
+兰州百合干（罐装）|HIOSBON Lillienknollen aus Lanzhou 100g,"5,99",yes,https://goasia.net/detail/index/sArticle/6451/sCategory/20
+妈妈猪肉方便面|MAMA Instant-Nudeln Schwein 60g,"0,49",yes,https://goasia.net/detail/index/sArticle/6450/sCategory/20
+OBENTO乌冬碗面 内蒙古辣味|OBENTO Nudeln Scharf Mongolian Bowl 240g,"2,49",yes,https://goasia.net/detail/index/sArticle/6449/sCategory/20
+日清日式炒面 杯面|NISSIN Japanische Instant Soba Nudeln Cup 90g,"1,79",yes,https://goasia.net/detail/index/sArticle/6448/sCategory/20
+但氏冷泉花豆干 香辣味|DANSHI Lengquan Tofu Snack scharf 95g,"1,19",yes,https://goasia.net/detail/index/sArticle/6447/sCategory/20
+丸东长崎蜂蜜蛋糕 抹茶红豆味|MARUTO Matcha-Rotbohnen-Kuchen 120g,"4,99",yes,https://goasia.net/detail/index/sArticle/6446/sCategory/20
+乌龙茶饮料（罐装）|POKKA Oolong Teegetränk Dose 300ml,"1,59",yes,https://goasia.net/detail/index/sArticle/6444/sCategory/20
+...,...,...,...
+,===
